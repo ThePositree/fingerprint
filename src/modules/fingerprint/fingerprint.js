@@ -1,5 +1,4 @@
 import UAParser from 'ua-parser-js';
-import axios from 'axios';
 import md5 from 'md5';
 import getCanvasFingerprint from './canvasFingerprint';
 import getFontsByOld from './detectFontOld';
@@ -28,23 +27,6 @@ export default async () => {
     countryName: ipInfo.countryName,
     stateProv: ipInfo.stateProv,
   };
-  navigator.geolocation.getCurrentPosition(async (geoResponse) => {
-    try {
-      const lat = geoResponse.coords.latitude;
-      const lon = geoResponse.coords.longitude;
-      const url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address';
-      const token = '9ce569b9e81fc6d0dde32c6828f889cf70c33a64';
-      const body = { lat, lon };
-      const { data } = await axios.post(url, body, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      });
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  });
 
   const result = {
     ...new UAParser().getResult(),

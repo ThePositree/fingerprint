@@ -7,17 +7,183 @@
     <title>fingerprint</title>
   </head>
 
-  <body style="min-height: 100vh; overflow-x: hidden">
-    <div
-      id="heatmap"
-      style="
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 100%;
-      "
-    ></div>
+  <body>
+    <div id="heatmap"></div>
+    <div class="data">
+      <div class="data-browser data-info">
+        <span class="data-title">Браузер:</span>
+        <div class="data-browser__name">
+          Название браузера:<span class="for-replace"></span>
+        </div>
+        <div class="data-browser__version">
+          Версия браузера:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-canvas data-info">
+        <span class="data-title">2d canvas:</span>
+        <div class="data-canvas__text">
+          Нарисованный текст в виде изображения из canvas:
+          <img class="image-for-replace" alt="Результаты отрисовки 2D текста" />
+        </div>
+        <div class="data-canvas__text-hash">
+          Hash нарисованного текста:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-canvas__geometry">
+          Нарисованных геометрические фигуры из canvas:
+          <img
+            class="image-for-replace"
+            alt="Результаты отрисовки 2D геометрической фигуры"
+          />
+        </div>
+        <div class="data-canvas__geometry-hash">
+          Hash нарисованных геометрических фигур:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-webgl data-info">
+        <span class="data-title">3d webgl canvas:</span>
+        <div class="data-webgl__image-url">
+          Результаты отрисовки 3D WebGl canvas:
+          <img class="image-for-replace" alt="Результаты отрисовки 3D" />
+        </div>
+        <div class="data-webgl__hash">
+          Hash Результатов отрисовки 3D WebGl canvas:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-os data-info">
+        <span class="data-title">Операционная система:</span>
+        <div class="data-os__name">
+          Название операционной системы:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__version">
+          Версия операционной системы:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__cpu-architecture">
+          Архитектура cpu:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__device-model">
+          Модель устройства(если не с ПК):
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__device-type">
+          Тип устройства:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__engine-name">
+          Название движка браузера:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__engine-version">
+          Версия движка браузера:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__ip">
+          Внешний ip адрес:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__fonts-by-site-channel-technique">
+          Список системных шрифтов(1 вариант):
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-os__fonts-by-font-face-set-api">
+          Список системных шрифтов(2 вариант):
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-screen data-info">
+        <span class="data-title">Экран:</span>
+        <div class="data-screen__resolution">
+          Разрешение экрана:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-geo data-info">
+        <span class="data-title">Geo-позиция:</span>
+        <div class="data-geo__city">
+          Город:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-geo__continent-code">
+          Код континента:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-geo__continent-name">
+          Континент:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-geo__country-code">
+          Код страны:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-geo__country-name">
+          Страна:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-geo__approximate-location">
+          Примерное местоположение:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-tls data-info">
+        <span class="data-title">tls информация:</span>
+        <div class="data-tls__version">
+          Версия tls протокола:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-tls__ephemeral-keys-supported">
+          Поддержка временных ключей:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-tls__cipher-suites">
+          Доступные наборы шифров:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-tls__session-ticket-supported">
+          Поддержка сессионного билета:
+          <span class="for-replace"></span>
+        </div>
+        <div class="data-tls__tls-compression-supported">
+          Поддержка сжатия tls:
+          <span class="for-replace"></span>
+        </div>
+      </div>
+      <div class="data-keyboard data-info">
+        <span class="data-title">Клавиатурный ввод:</span>
+        <div class="data-keyboard__average-frequency">
+          Периодичность ввода в сек:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__counter-symbols">
+          Колличество нажатых клавиш:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__keys">
+          Нажатые клавиши:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__last-three-symbols">
+          Последние три нажатыe клавиши:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__symbol-per-minutes">
+          Нажатий в минуту:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__symbol-per-seconds">
+          Нажатий в секунду:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+        <div class="data-keyboard__time-since-last-press">
+          Время с прошлого нажатия:
+          <span class="for-replace">Нажмите клавишу</span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
