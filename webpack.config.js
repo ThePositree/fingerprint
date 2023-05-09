@@ -19,7 +19,6 @@ module.exports = (env) => {
   const cssLoaders = [
     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
     'css-loader',
-    'postcss-loader',
   ];
 
   const webpack = {

@@ -1,3 +1,13 @@
+import {
+  setKeyboardAverageFrequency,
+  setKeyboardCounterSymbols,
+  setKeyboardKeys,
+  setKeyboardLastThreeSymbols,
+  setKeyboardSymbolPerMinutes,
+  setKeyboardSymbolPerSeconds,
+  setKeyboardTimeSinceLastPress,
+} from '../visualization/keyboard';
+
 export const keyboardInfo = {
   counterSymbols: 0,
   lastThreeSymbols: [],
@@ -38,4 +48,11 @@ export default (event) => {
   } else {
     keyboardInfo.keys[event.code] += 1;
   }
+  setKeyboardAverageFrequency(keyboardInfo.averageFrequency);
+  setKeyboardCounterSymbols(keyboardInfo.counterSymbols);
+  setKeyboardKeys(keyboardInfo.keys);
+  setKeyboardLastThreeSymbols(keyboardInfo.lastThreeSymbols);
+  setKeyboardSymbolPerMinutes(keyboardInfo.symbolPerMinutes);
+  setKeyboardSymbolPerSeconds(keyboardInfo.symbolPerSeconds);
+  setKeyboardTimeSinceLastPress(keyboardInfo.timeSinceLastPress);
 };
