@@ -23,12 +23,13 @@
     "prettier": "^2.8.8",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
+    "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "axios": "^1.4.0",
+    "heatmap.js-fixed": "^2.0.2",
     "md5": "^2.3.0",
     "ua-parser-js": "^1.0.35"
   }
