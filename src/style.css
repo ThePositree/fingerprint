@@ -1,0 +1,41 @@
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#heatmap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+.data > div {
+  margin-bottom: 20px;
+  border: 1px solid salmon;
+  border-radius: 10px;
+  background-color: wheat;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.for-replace {
+  font-weight: 400;
+}
+
+.data-title {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.data-canvas__text,
+.data-canvas__geometry,
+.data-webgl__image-url {
+  display: flex;
+  align-items: center;
+}
